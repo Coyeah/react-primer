@@ -4,5 +4,7 @@ import React from 'react';
 import { render } from "react-dom";
 
 import Input from './Input';
+render(<Input />, document.getElementById('input'));
 
-render(<Input />, document.getElementById('app'));
+import Clock from './Clock';
+render(<Clock />, document.getElementById('app'));
