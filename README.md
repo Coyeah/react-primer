@@ -6,7 +6,7 @@
 
 *demo6*
 
-![tabs-gif](https://github.com/Coyeah/react-tabs/blob/master/dome06/tabs.gif)
+![tabs-gif](https://github.com/Coyeah/react-tabs/blob/master/demo06/tabs.gif)
 
 **问题：**
 
