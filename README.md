@@ -4,7 +4,11 @@
 
 入门React学习之路
 
-问题：
+*demo6*
+
+![tabs-gif](https://github.com/Coyeah/react-tabs/blob/master/dome6/tabs.gif)
+
+**问题：**
 
 1. React/Error: Minified React error #130
 
@@ -39,3 +43,43 @@ static defaultProps = {
   "presets": ["es2015","react","stage-0"]
 }
 ```
+
+3. Cannot read property 'string' of undefined
+
+在之前的版本可以通过React.PropTypes这个API来访问React内置的一些类型来检查props，后来这一API被独立成了一个新的包prop-types
+
+**解决方法：**
+
+安装并引用prop-types
+
+`cnpm install --save prop-types`
+
+4. make me crary!?
+
+我也不知道为什么。
+
+这个，是我手打的。
+
+```JavaScript
+<Tabs defaultAcitveIndex={this.state.activeIndex} className="tabs-bar">
+  <TabPane order="0" tab={'Tab 1'}>第一个 Tab 里的内容</TabPane>
+  <TabPane order="1" tab={'Tab 2'}>第二个 Tab 里的内容</TabPane>
+  <TabPane order="2" tab={'Tab 3'}>第三个 Tab 里的内容</TabPane>
+</Tabs>
+```
+
+这个，是教材的源码。
+
+```JavaScript
+<Tabs defaultActiveIndex={this.state.activeIndex} className="tabs-bar">
+  <TabPane order="0" tab={'Tab 1'}>第一个 Tab 里的内容</TabPane>
+  <TabPane order="1" tab={'Tab 2'}>第二个 Tab 里的内容</TabPane>
+  <TabPane order="2" tab={'Tab 3'}>第三个 Tab 里的内容</TabPane>
+</Tabs>
+```
+
+找不同？
+
+就这一小段，我手打的，没有效果。教材源码，就有效果。
+
+还是我眼瞎？
