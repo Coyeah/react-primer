@@ -27,7 +27,7 @@ class Tabs extends Component {
 				<p>{this.state.count}</p>
 				<a href="#" onClick={this.handleClick}>更新</a>
 			</div>
-		)
+		);
 	}
 };
 
