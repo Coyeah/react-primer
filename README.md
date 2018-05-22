@@ -8,6 +8,10 @@
 
 ![tabs-gif](https://github.com/Coyeah/react-tabs/blob/master/demo06/tabs.gif)
 
+*Flux - demo7*
+
+[关于Flux](https://github.com/Coyeah/react-primer/blob/master/demo07/README.md)
+
 **问题：**
 
 1. React/Error: Minified React error #130
