@@ -4,13 +4,17 @@
 
 入门React学习之路
 
-*demo6*
+*React - demo6*
 
 ![tabs-gif](https://github.com/Coyeah/react-tabs/blob/master/demo06/tabs.gif)
 
 *Flux - demo7*
 
 [关于Flux](https://github.com/Coyeah/react-primer/blob/master/demo07/README.md)
+
+*Redux - demo8*
+
+基于React-Redux小练习。
 
 **问题：**
 
