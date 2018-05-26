@@ -12,7 +12,7 @@
 
 [关于Flux](https://github.com/Coyeah/react-primer/blob/master/demo07/README.md)
 
-*Redux - demo8*
+*Redux - demo8 & demo9*
 
 基于React-Redux小练习。
 
