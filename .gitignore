@@ -1,0 +1,4 @@
+# .gitignore
+
+node_modules/
+dome08/node_modules/
