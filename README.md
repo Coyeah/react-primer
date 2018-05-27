@@ -18,7 +18,9 @@
 
 ---
 
-**问题：**
+## 问题：
+
+### 关于React
 
 1. React/Error: Minified React error #130
 
@@ -93,3 +95,35 @@ static defaultProps = {
 就这一小段，我手打的，没有效果。教材源码，就有效果。
 
 还是我眼瞎？
+
+### 关于Redux
+
+1. Uncaught Error: Actions may not have an undefined "type" property. Have you misspelled a constant?
+
+```JavaScript
+// 改动前
+export default connect(state => ({
+  text: state.text,
+}), dispatch => ({
+  actions: bindActionCreators(NumActions, dispatch),
+}))(App)
+
+// 改动后
+export default connect(state => ({
+  text: state.text,
+}), dispatch => ({
+  addNumHandler: () => dispatch(addNumber),
+  subNumHandler: () => dispatch(subNumber),
+}))(App)
+```
+
+这个错误为什么还不知道为什么。在展示组件上需要在this.props上获取数据。
+
+但是，延伸出第二个问题。
+
+2. Actions must be plain objects. Use custom middleware for async actions.
+
+* 原因一：使用异步actions时，没有配置redux-thunk这个中间件
+* 原因二：调用action方法时，方法体内部并没有调用dispatch。
+
+[Redux中间件和异步操作](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_two_async_operations.html)
