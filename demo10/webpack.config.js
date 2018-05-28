@@ -1,4 +1,5 @@
 // webpack.config.js
+let path = require('path');
 
 module.exports = {
 	entry: __dirname + '/src/index.js',

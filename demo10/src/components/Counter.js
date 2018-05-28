@@ -3,12 +3,20 @@
 import React, { Component } from 'react';
 
 class Counter extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
-    return(
+    console.log(this.props);
+
+    const { addCount, subCount } = this.props.actions;
+
+    return (
       <div>
-        <p> {this.props.text} </p>
-        <button onClick={this.props.addNumber.bind(this)}> + </button>
-        <button onClick={this.props.subNumber.bind(this)}> - </button>
+        <h1>{this.props.sum}</h1>
+        <button onClick={addCount}> + </button>
+        <button onClick={subCount}> - </button>
       </div>
     );
   }

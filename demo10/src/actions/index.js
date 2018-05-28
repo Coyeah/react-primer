@@ -1,14 +1,12 @@
 // index.js
-import { NUM_CHANGE_ADD, NUM_CHANGE_SUB } from '../constants/actionTypes';
-
-export function addNumber() {
+export function addCount() {
   return {
-    type: NUM_CHANGE_ADD,
+    type: "ADD_COUNT",
   }
 }
 
-export function subNumber() {
+export function subCount() {
   return {
-    type: NUM_CHANGE_SUB,
+    type: "SUB_COUNT",
   }
 }
