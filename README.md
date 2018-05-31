@@ -18,7 +18,7 @@
 
 * *Redux - demo10*
 
-React-Redux，按功能划分文件。
+React-Redux，分文件编写。
 
 -- actions
 
@@ -146,4 +146,8 @@ export default connect(state => ({
 * 原因一：使用异步actions时，没有配置redux-thunk这个中间件
 * 原因二：调用action方法时，方法体内部并没有调用dispatch。
 
-[Redux中间件和异步操作](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_two_async_operations.html)
+参考资料：
+
+* [Redux基本用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html)
+* [Redux中间件和异步操作](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_two_async_operations.html)
+* [React-Redux 的用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html)
