@@ -4,11 +4,11 @@
 
 入门React学习之路
 
-* *React - demo6*
+* **React - demo6**
 
 ![tabs-gif](https://github.com/Coyeah/react-tabs/blob/master/demo06/tabs.gif)
 
-* *Flux - demo7*
+* **Flux - demo7**
 
 [关于Flux](https://github.com/Coyeah/react-primer/blob/master/demo07/README.md)
 
@@ -16,7 +16,7 @@
 
 基于React-Redux小练习，由一个文件完成Redux。
 
-* *Redux - demo10*
+* **Redux - demo10**
 
 React-Redux，分文件编写。
 
@@ -35,6 +35,14 @@ React-Redux，分文件编写。
 -- components
 
 存放展示组件，从this.props获取数据进行展示。
+
+* **React-Router - demo11**
+
+路由配置：用于告诉router如何匹配URL以及匹配后如何执行代码。
+
+`<Route path="/" component={...} />`
+
+其主要目的是为了让UI从URL中解耦。在React中组件的变化也类似于页面的变化，因此配合上URL，可以更好的用户体验之余，还能“精准定位”。
 
 ---
 
