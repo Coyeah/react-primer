@@ -42,13 +42,19 @@ React-Redux，分文件编写。
 
 存放展示组件，从this.props获取数据进行展示。
 
-### React-Router - demo11
+### React-Router - demo11 & demo12
 
 路由配置：用于告诉router如何匹配URL以及匹配后如何执行代码。
 
 `<Route path="/" component={...} />`
 
 其主要目的是为了让UI从URL中解耦。在React中组件的变化也类似于页面的变化，因此配合上URL，可以更好的用户体验之余，还能“精准定位”。
+
+demo11 与 demo12 不同于 react-router 的版本不同。v4的 react-router 使用的是 react-router-dom ，里的所有东西“仅仅是组件”，因此更加易懂。
+
+参考资料：
+
+* [简明React Router v4教程](https://juejin.im/post/5a7e9ee7f265da4e7832949c)
 
 ---
 
