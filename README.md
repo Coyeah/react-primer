@@ -18,11 +18,9 @@
 
 Redux中的Action、Store、Reducer之间白话关系。（个人理解）
 
-Action通过dispatch方式告诉store需要修改数据的指令
-
-Store根据Action在Reducer中对应的方法执行从而修改数据
-
-Reducer修改完数据State后返回到Store
+* Action通过dispatch方式告诉store需要修改数据的指令
+* Store发送Action指令给Reducer命令指定方法执行
+* Reducer接收到Action指令后根据指定方法执行修改State后返回给Store
 
 ### Redux - demo10
 
