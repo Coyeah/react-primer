@@ -56,6 +56,14 @@ demo11 与 demo12 不同于 react-router 的版本不同。v4的 react-router �
 
 * [简明React Router v4教程](https://juejin.im/post/5a7e9ee7f265da4e7832949c)
 
+### Redux-Saga - demo13
+
+redux-saga的一个实例。
+
+参考资料：
+
+* [redux-saga的简单入门](http://lyn.s76.org/2017/02/14/redux-saga-js/)
+
 ---
 
 ## 问题：
@@ -106,35 +114,13 @@ static defaultProps = {
 
 `cnpm install --save prop-types`
 
-4. make me crary!?
+4. Objects are not valid as a React child (found: object with keys {key, id, title}).
 
-我也不知道为什么。
+该问题是在React组件中有部分是不符合元素/组件的格式。
 
-这个，是我手打的。
+我所遇到的问题的是，我想直接通过`{this.props.data}`把数据输出就报错了。
 
-```JavaScript
-<Tabs defaultAcitveIndex={this.state.activeIndex} className="tabs-bar">
-  <TabPane order="0" tab={'Tab 1'}>第一个 Tab 里的内容</TabPane>
-  <TabPane order="1" tab={'Tab 2'}>第二个 Tab 里的内容</TabPane>
-  <TabPane order="2" tab={'Tab 3'}>第三个 Tab 里的内容</TabPane>
-</Tabs>
-```
-
-这个，是教材的源码。
-
-```JavaScript
-<Tabs defaultActiveIndex={this.state.activeIndex} className="tabs-bar">
-  <TabPane order="0" tab={'Tab 1'}>第一个 Tab 里的内容</TabPane>
-  <TabPane order="1" tab={'Tab 2'}>第二个 Tab 里的内容</TabPane>
-  <TabPane order="2" tab={'Tab 3'}>第三个 Tab 里的内容</TabPane>
-</Tabs>
-```
-
-找不同？
-
-就这一小段，我手打的，没有效果。教材源码，就有效果。
-
-还是我眼瞎？
+因为JS对象不符合元素的格式。
 
 ### 关于Redux
 
@@ -171,3 +157,5 @@ export default connect(state => ({
 * [Redux基本用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html)
 * [Redux中间件和异步操作](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_two_async_operations.html)
 * [React-Redux 的用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html)
+
+### 关于Saga
