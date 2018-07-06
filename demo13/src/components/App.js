@@ -1,13 +1,21 @@
 import React from 'react';
-import Menu from './Menu';
+import Tab from './Tab';
+
+import { Layout } from 'antd';
+
+const { Content, Sider } = Layout;
 
 class App extends React.Component {
   render() {
     return (
-      <div>
-        <Menu />
-        {this.props.children}
-      </div>
+      <Layout style={{ height: '100%' }}>
+        <Sider width={200}>
+          <Tab />
+        </Sider>
+        <Content style={{ padding: '0 24px', minHeight: 280 }}>
+          {this.props.children}
+        </Content>
+      </Layout>
     );
   }
 }
