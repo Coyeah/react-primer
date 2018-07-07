@@ -25,7 +25,7 @@ class Tab extends React.Component {
       <Menu
         mode="inline"
         theme="dark"
-        style={{ width: 200, height: '100%' }}
+        defaultSelectedKeys={['1']}
       >
         <SubMenu key="首页" title="首页">
           <Menu.Item key="Home"><Link to="/Home" activeClassName={activeClass}>Home</Link></Menu.Item>

@@ -41,7 +41,7 @@ class AppRouter extends React.Component {
 
 
 ReactDOM.render(
-<Provider store={store}>
-  <AppRouter />
-</Provider>
+  <Provider store={store}>
+    <AppRouter />
+  </Provider>
 , document.body);
