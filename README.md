@@ -56,9 +56,9 @@ demo11 与 demo12 不同于 react-router 的版本不同。v4的 react-router �
 
 * [简明React Router v4教程](https://juejin.im/post/5a7e9ee7f265da4e7832949c)
 
-### Redux-Saga - demo13
+### 综合实践 - demo13
 
-redux-saga的一个实例。
+技术栈：react + react-router + redux + redux-saga + antd
 
 参考资料：
 
