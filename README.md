@@ -22,6 +22,8 @@ Redux中的Action、Store、Reducer之间白话关系。（个人理解）
 * Store发送Action指令给Reducer命令指定方法执行
 * Reducer接收到Action指令后根据指定方法执行修改State后返回给Store
 
+![Redux Flow](https://github.com/Coyeah/react-primer/blob/master/resource/reduxFlow.jpg)
+
 ### Redux - demo10
 
 React-Redux，分文件编写。
@@ -74,6 +76,29 @@ call方法：
 put方法：
 
 put就是redux的dispatch，用来触发reducer更新store
+
+*对于中间件的异步操作，个人理解*
+
+```
+componentDidMount() {
+  const { dispatch } = this.props
+  dispatch(fetchPosts(data));
+}
+```
+
+action是一个字符串的标签，告诉reducer需要进行什么操作。而在异步操作中，action传入了一个方法，该方法中还会有一个`dispatch(action)`在异步的回调函数中。
+
+#### 相关框架使用：
+
+* axios: 基于Promise的http库，适用于浏览器和node.js。
+
+
+参考资料：
+
+* [github.com/redux-saga](https://github.com/redux-saga/redux-saga/blob/master/README_zh-cn.md)
+* [redux-saga文档](https://redux-saga-in-chinese.js.org/)
+* [axios文档](https://github.com/axios/axios)
+* [axios中文文档](https://segmentfault.com/a/1190000008470355)
 
 ### 综合实践 - demo14
 
