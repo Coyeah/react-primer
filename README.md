@@ -57,6 +57,7 @@ demo11 与 demo12 不同于 react-router 的版本不同。v4的 react-router �
 参考资料：
 
 * [简明React Router v4教程](https://juejin.im/post/5a7e9ee7f265da4e7832949c)
+* [React Router 4：痛过之后的豁然开朗](https://www.jianshu.com/p/bf6b45ce5bcc)
 
 ### Redux-saga - demo13
 
@@ -69,13 +70,9 @@ redux中间件，涉及JavaScript生成器。
 * takeEvery: 会在接到相应的action之后不断产生新的副作用。
 * takeLates: 在相同额action被触发多次后，只会执行最后一次，其他的都会被取消。
 
-call方法：
+call方法：有些类似Javascript中的call函数，不同的是它可以接受一个返回promise的函数，使用生成器的方式来把异步变同步。
 
-有些类似Javascript中的call函数，不同的是它可以接受一个返回promise的函数，使用生成器的方式来把异步变同步。
-
-put方法：
-
-put就是redux的dispatch，用来触发reducer更新store
+put方法：put就是redux的dispatch，用来触发reducer更新store
 
 *对于中间件的异步操作，个人理解*
 
@@ -97,16 +94,14 @@ action是一个字符串的标签，告诉reducer需要进行什么操作。而�
 
 * [github.com/redux-saga](https://github.com/redux-saga/redux-saga/blob/master/README_zh-cn.md)
 * [redux-saga文档](https://redux-saga-in-chinese.js.org/)
+* [redux-saga的简单入门](http://lyn.s76.org/2017/02/14/redux-saga-js/)
+* [redux-saga 实践总结](https://zhuanlan.zhihu.com/p/23012870)
 * [axios文档](https://github.com/axios/axios)
 * [axios中文文档](https://segmentfault.com/a/1190000008470355)
 
 ### 综合实践 - demo14
 
 技术栈：react + react-router + redux + redux-saga + antd
-
-参考资料：
-
-* [redux-saga的简单入门](http://lyn.s76.org/2017/02/14/redux-saga-js/)
 
 ---
 
