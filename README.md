@@ -1,18 +1,18 @@
-# react - primer
+# 学习react技术栈之路
 
 **[待完善]**
 
 ## 入门React学习之路
 
-### React - demo6
+### react - demo6
 
 ![tabs-gif](https://github.com/Coyeah/react-tabs/blob/master/demo06/tabs.gif)
 
-### Flux - demo7
+### flux - demo7
 
 [关于Flux](https://github.com/Coyeah/react-primer/blob/master/demo07/README.md)
 
-### Redux - demo8 & demo9
+### redux - demo8 & demo9
 
 基于React-Redux小练习，由一个文件完成Redux。
 
@@ -24,9 +24,9 @@ Redux中的Action、Store、Reducer之间白话关系。（个人理解）
 
 ![Redux Flow](https://github.com/Coyeah/react-primer/blob/master/resource/reduxFlow.jpg)
 
-### Redux - demo10
+### redux - demo10
 
-React-Redux，分文件编写。
+分文件编写:
 
 -- actions
 
@@ -44,7 +44,7 @@ React-Redux，分文件编写。
 
 存放展示组件，从this.props获取数据进行展示。
 
-### React-Router - demo11 & demo12
+### react-router - demo11 & demo12
 
 路由配置：用于告诉router如何匹配URL以及匹配后如何执行代码。
 
@@ -59,7 +59,7 @@ demo11 与 demo12 不同于 react-router 的版本不同。v4的 react-router �
 * [简明React Router v4教程](https://juejin.im/post/5a7e9ee7f265da4e7832949c)
 * [React Router 4：痛过之后的豁然开朗](https://www.jianshu.com/p/bf6b45ce5bcc)
 
-### Redux-saga - demo13
+### redux-saga - demo13
 
 redux中间件，涉及JavaScript生成器。
 
@@ -83,6 +83,8 @@ componentDidMount() {
 }
 ```
 
+react-thunk和react-saga总体来说差不多。
+
 action是一个字符串的标签，告诉reducer需要进行什么操作。而在异步操作中，action传入了一个方法，该方法中还会有一个`dispatch(action)`在异步的回调函数中。
 
 #### 相关框架使用：
@@ -99,7 +101,7 @@ action是一个字符串的标签，告诉reducer需要进行什么操作。而�
 * [axios文档](https://github.com/axios/axios)
 * [axios中文文档](https://segmentfault.com/a/1190000008470355)
 
-### 综合实践 - demo14
+### 综合实践#1 - demo14
 
 技术栈：react + react-router + redux + redux-saga + antd
 
