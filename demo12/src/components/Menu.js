@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 
-let list = ["Home", "Story", "Travel"];
+let list = ["Home", "Story", "Travel", "Visual"];
 
 class MenuLi extends React.Component {
   render() {
@@ -13,7 +13,7 @@ class MenuLi extends React.Component {
 
     return (
       <li>
-        <Link to={linkTo} activeClassName={activeClass}>
+        <Link to={linkTo} >
           {this.props.name}
         </Link>
       </li>
@@ -27,7 +27,7 @@ class MenuUl extends React.Component {
       <ul>
         {
           list.map(function(menuli) {
-            return <MenuLi name={menuli} />
+            return <MenuLi key={menuli} name={menuli} />
           })
         }
       </ul>

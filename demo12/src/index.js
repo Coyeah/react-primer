@@ -7,15 +7,17 @@ import App from './components/App';
 import Home from './components/Home';
 import Story from './components/Story';
 import Travel from './components/Travel';
+import Visual from './components/Visual';
 
 class AppRouter extends React.Component {
   render() {
     return (
       <HashRouter basename="/">
         <App>
-          <Route path='/Home' component={Home} />
-          <Route path='/Story' component={Story} />
-          <Route path='/Travel' component={Travel} />
+          <Route key='visual' path='/Visual' component={Visual} />
+          <Route key='home' path='/Home' component={Home} />
+          <Route key='story' path='/Story' component={Story} />
+          <Route key='travel' path='/Travel' component={Travel} />
         </App>
       </HashRouter>
     );
@@ -23,4 +25,4 @@ class AppRouter extends React.Component {
 }
 
 
-ReactDOM.render(<AppRouter />, document.body);
+ReactDOM.render(<AppRouter />, document.getElementById('root'));

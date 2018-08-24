@@ -44,6 +44,12 @@ Redux中的Action、Store、Reducer之间白话关系。（个人理解）
 
 存放展示组件，从this.props获取数据进行展示。
 
+参考资料：
+
+* [Redux基本用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html)
+* [Redux中间件和异步操作](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_two_async_operations.html)
+* [React-Redux 的用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html)
+
 ### react-router - demo11 & demo12
 
 路由配置：用于告诉router如何匹配URL以及匹配后如何执行代码。
@@ -76,7 +82,7 @@ put方法：put就是redux的dispatch，用来触发reducer更新store
 
 *对于中间件的异步操作，个人理解*
 
-```
+```react
 componentDidMount() {
   const { dispatch } = this.props
   dispatch(fetchPosts(data));
@@ -200,11 +206,3 @@ export default connect(state => ({
 
 * 原因一：使用异步actions时，没有配置redux-thunk这个中间件
 * 原因二：调用action方法时，方法体内部并没有调用dispatch。
-
-参考资料：
-
-* [Redux基本用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html)
-* [Redux中间件和异步操作](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_two_async_operations.html)
-* [React-Redux 的用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html)
-
-### 关于Saga
