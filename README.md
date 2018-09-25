@@ -119,6 +119,16 @@ action是一个字符串的标签，告诉reducer需要进行什么操作。而�
 * [dva 介绍](https://github.com/dvajs/dva/issues/1)
 * [dva 入门：手把手教你写应用](https://github.com/sorrycc/blog/issues/8)
 
+### 综合实践#2 - demo16
+
+**[持续更新]**
+
+基于 `redux` 的基础 ToDo List 实现基础代码框架，实现分层和工程化。
+
+技术栈：react + react-router + redux + redux-saga + antd
+
+项目位置：[传送门](https://github.com/Coyeah/react-todo)
+
 ---
 
 ## 问题：
