@@ -127,7 +127,13 @@ action是一个字符串的标签，告诉reducer需要进行什么操作。而�
 
 技术栈：react + react-router + redux + redux-saga + antd
 
-项目位置：[传送门](https://github.com/Coyeah/react-todo)
+[项目传送门](https://github.com/Coyeah/react-todo)
+
+### 同构应用 - demo17
+
+服务端渲染的好处很多，提高性能、SEO优化支持、可维护性强等等。
+
+服务端渲染和同构大体相同，区别在于服务端渲染主要侧重架构层面的实现，而童工则更注重代码的复用。
 
 ---
 
