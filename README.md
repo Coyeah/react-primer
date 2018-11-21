@@ -147,6 +147,28 @@ action是一个字符串的标签，告诉reducer需要进行什么操作。而�
 
 利用函数柯里化进行对组件进行包装（WrappedComponent），对组件进行事件监听。
 
+### React 与 Mobx - demo19
+
+基于 Mobx 的基础练习，todo list。
+
+#### 关于 Mobx
+
+用于状态管理，与 Redux 相同，区别在于状态管理的集中性、构建应用迅速，而 Redux 的写法繁琐。但是在项目足够大的情况下，Redux 更加有优势。
+
+#### 小问题
+
+`.babelrc` 文件中，`@babel/plugin-proposal-decorators` 与 `@babel/plugin-proposal-class-properties` 的顺序很重要。否则会报错：`SyntaxError: Decorators transform is necessary.`
+
+错误:
+```
+['@babel/plugin-proposal-class-properties', {
+loose: true
+}],
+['@babel/plugin-proposal-decorators', {
+legacy: true
+}]
+```
+
 ---
 
 ## 问题：
