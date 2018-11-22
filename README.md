@@ -149,13 +149,15 @@ action是一个字符串的标签，告诉reducer需要进行什么操作。而�
 
 ### React 与 Mobx - demo19
 
-基于 Mobx 的基础练习，todo list。
+基于 Mobx 的基础练习，todo list & count。
 
 #### 关于 Mobx
 
 用于状态管理，与 Redux 相同，区别在于状态管理的集中性、构建应用迅速，而 Redux 的写法繁琐。但是在项目足够大的情况下，Redux 更加有优势。
 
-#### 小问题
+#### 修饰器小问题
+
+这是一个修饰器（ES7）在 webpack 的问题。
 
 `.babelrc` 文件中，`@babel/plugin-proposal-decorators` 与 `@babel/plugin-proposal-class-properties` 的顺序很重要。否则会报错：`SyntaxError: Decorators transform is necessary.`
 
