@@ -15,11 +15,19 @@ const navMap = (config => {
 const BasicLayout: React.FC = (props): React.ReactElement => {
   const {pathname} = history.location;
   return (
-    <div id={styles.basic}>
-      <DocumentTitle title={`medo - ${navMap[pathname]}`}>
-        {props.children}
-      </DocumentTitle>
-    </div>
+    <DocumentTitle title={`Todo - ${navMap[pathname]}`}>
+      <div id={styles.basic}>
+        <div id={styles.header}>
+          Todo List
+        </div>
+        <div id={styles.container}>
+          {props.children}
+        </div>
+        <div id={styles.footer}>
+          Copyright 2019 © Created by Coyeah
+        </div>
+      </div>
+    </DocumentTitle>
   )
 }
 

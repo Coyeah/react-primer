@@ -7,6 +7,7 @@ import {render} from 'react-dom';
 import {Provider} from 'mobx-react';
 import Router from './Router';
 import todoStore from './stores/Todo';
+import Context from './stores/index';
 
 let store = {
   todoStore
@@ -15,7 +16,9 @@ let store = {
 const App: React.FC = (props): React.ReactElement => {
   return (
     <Provider {...store}>
-      <Router />
+      <Context.Provider value={{...store}}>
+        <Router />
+      </Context.Provider>
     </Provider>
   )
 }

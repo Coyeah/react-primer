@@ -1,0 +1,28 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 8px;
+  margin: 0;
+  transition: 0.5s all;
+
+  &:hover {
+    background-color: rgba(0,0,0,0.1);
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .options {
+    min-width: 50px;
+    max-width: 50px;
+    width: 50px;
+    text-align: right;
+  }
+
+  .lineThrough {
+    text-decoration: line-through;
+  }
+}
