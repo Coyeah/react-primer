@@ -61,9 +61,9 @@ module.exports = {
         minifyJS: true // 压缩 HTML 中出现的 JS 代码
       }
     }),
-    new CopyWebpackPlugin([{
-      from: __dirname + '/public',
-    }])
+    // new CopyWebpackPlugin([{
+    //   from: __dirname + '/public',
+    // }])
     // new webpack.ProvidePlugin({
     //   _: 'lodash' //所有页面都会引入 _ 这个变量，不用再import引入
     // }),
