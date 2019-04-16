@@ -5,6 +5,7 @@ if (process.env.NODE_ENV === 'development' && ENV_MOCK) {
 import React from 'react';
 import {render} from 'react-dom';
 import {Provider} from 'mobx-react';
+import { useObservable } from 'mobx-react-lite'
 import Router from './Router';
 import todoStore from './stores/Todo';
 import Context from './stores/index';

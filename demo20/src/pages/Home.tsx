@@ -4,7 +4,6 @@ import {
   Row, Col,
   Icon, Divider, Popover
 } from 'antd';
-import {Link} from 'react-router-dom';
 import moment from 'moment';
 import {observer, inject} from 'mobx-react'
 import {TodoItem} from '@/stores/Todo';
@@ -30,8 +29,9 @@ class Home extends React.Component {
   addNewItem = () => {
     const {inputValue} = this.state;
     if (!inputValue) return null;
+    const {todoStore: {addItem}} = this.props;
     this.setState({inputValue: ''}, () => {
-      this.props.todoStore.list.push(new TodoItem({
+    addItem(new TodoItem({
         content: inputValue,
         status: 0
       }));
@@ -39,8 +39,9 @@ class Home extends React.Component {
   }
 
   addRoutineItem = () => {
+    const {todoStore: {addItem}} = this.props;
     routine.forEach(value => {
-      this.props.todoStore.list.push(new TodoItem({
+      addItem(new TodoItem({
         content: value,
         status: 0
       }));
@@ -48,15 +49,8 @@ class Home extends React.Component {
   }
 
   onStatusChange = (id, status) => {
-    console.log(id);
-    const {todoStore: {list}} = this.props;
-    this.props.todoStore.list = list.map(value => {
-      if (value.id === id) {
-        value.status = status;
-        value.updateTime = moment().format('YYYY-MM-DD HH:mm');
-      }
-      return value;
-    })
+    const {todoStore: {statusChange}} = this.props;
+    statusChange(id, status);
   }
 
   listRender = () => {
@@ -112,7 +106,7 @@ class Home extends React.Component {
           {this.listRender()}
         </Card>
         <Row style={{marginTop: 20}}>
-          <Col span={15}>
+          <Col span={18}>
             <Input
               value={this.state.inputValue}
               placeholder="请输入你的待办事项，亦或点击“日常计划”自动生成日常计划"
@@ -124,9 +118,6 @@ class Home extends React.Component {
           </Col>
           <Col span={3}>
             <Button block onClick={this.addRoutineItem}>日常计划</Button>
-          </Col>
-          <Col span={3}>
-            <Button block ><Link to="/report">查看报告</Link></Button>
           </Col>
         </Row>
       </div>
