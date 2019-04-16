@@ -24,7 +24,7 @@ import {Todo} from './store.jsx';
 @observer
 class TodoListView extends React.Component {
   handleClick = () => {
-    this.props.todoList.todos.push(new Todo(`${Date.now()}待办事项`));
+    this.props.todoList.addItem(new Todo(`${Date.now()}待办事项`));
   }
 
   render() {

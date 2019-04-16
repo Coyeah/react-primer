@@ -11,6 +11,10 @@ export class Todo {
 
 export class TodoList {
   @observable todos = [];
+  @action.bound
+  addItem(target) {
+    this.todos.push(target);
+  }
   @computed
   get unfinishedTodoCount() {
     return this.todos.filter(value => !value.finished).length
