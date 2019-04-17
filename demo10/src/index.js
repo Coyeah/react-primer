@@ -1,17 +1,23 @@
-// index.js
 import React from 'react';
-import { render } from 'react-dom';
-import { Provider } from 'react-redux';
-import App from './containers/App';
-import configureStore from './configureStore';
+import {render} from 'react-dom';
+import TodoListView from './TodoListView.jsx';
+import CountView from './CountView.jsx';
 
-const store = configureStore();
-console.log(store.getState());
+import {Todo, TodoList, Count} from './store.jsx';
 
-const Main = () => (
-  <Provider store={store}>
-    <App />
-  </Provider>
-);
+const todoStore = new TodoList();
+const countStore = new Count();
 
-render(<Main />, document.getElementById('root'));
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <CountView count={countStore} />
+        <hr />
+        <TodoListView todoList={todoStore} />
+      </div>
+    )
+  }
+}
+
+render(<App />, document.getElementById('root'));

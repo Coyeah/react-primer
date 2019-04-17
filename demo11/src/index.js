@@ -1,30 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
-
-import Menu from './components/Menu';
-import Home from './components/Home';
-import Story from './components/Story';
-import Travel from './components/Travel';
-
-
+import {render} from 'react-dom';
+import {Store} from './store';
+import ChildrenContextType from './contextType';
+import ChildrenConsumer from './consumer';
 class App extends React.Component {
   render() {
     return (
-      <div>
-        <Menu />
-        {this.props.children}
-      </div>
-    );
+      <Store.Provider value={{user: 'coyeah'}}>
+        <ChildrenContextType />
+        <ChildrenConsumer />
+      </Store.Provider>
+    )
   }
 }
 
-ReactDOM.render((
-  <Router history={hashHistory}>
-    <Route path="/" component={App}>
-      <IndexRoute component={Home} />
-      <Route path='/Story' component={Story} />
-      <Route path='/Travel' component={Travel} />
-    </Route>
-  </Router>
-), document.body);
+render(<App />, document.getElementById('root'));

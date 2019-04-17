@@ -1,39 +1,47 @@
-// index.js
-import React, { Component, cloneElement } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import logger from 'redux-logger';
+import thunk from 'redux-thunk';
+import createSagaMiddleware from 'redux-saga';
+import { HashRouter, Route } from 'react-router-dom';
 
-import Tabs from './Tabs';
-import TabPane from './TabPane';
+import 'antd/dist/antd.min.css';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+import appReducer from './reducers';
+import rootSaga from './sagas';
 
-    this.handleChange = this.handleChange.bind(this);
+import App from './components/App';
+import Home from './components/Home';
+import PostList from './components/PostList';
+import UserList from './components/UserList';
 
-    this.state = {
-      activeIndex: 0,
-    };
-  }
+const sagaMiddleware = createSagaMiddleware();
+const middleware = [thunk, sagaMiddleware, logger];
 
-  handleChange(e) {
-    this.setState({
-      activeIndex: parseInt(e.target.value, 10),
-    });
-  }
+const store = createStore(appReducer, applyMiddleware(...middleware));
+sagaMiddleware.run(rootSaga);
 
+console.log(store.getState());
+
+class AppRouter extends React.Component {
   render() {
     return (
-      <div>
-        <Tabs defaultActiveIndex={this.state.activeIndex} className="tabs-bar">
-          <TabPane order="0" tab={'Tab 1'}>第一个 Tab 里的内容</TabPane>
-          <TabPane order="1" tab={'Tab 2'}>第二个 Tab 里的内容</TabPane>
-          <TabPane order="2" tab={'Tab 3'}>第三个 Tab 里的内容</TabPane>
-        </Tabs>
-      </div>
+      <HashRouter basename="/">
+        <App>
+          <Route path='/Home' component={Home} />
+          <Route path='/PostList' component={PostList} />
+          <Route path='/UserList' component={UserList} />
+        </App>
+      </HashRouter>
     );
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+ReactDOM.render(
+  <Provider store={store}>
+    <AppRouter />
+  </Provider>
+, document.body);
