@@ -84,6 +84,8 @@ redux中间件，涉及JavaScript生成器。关键词：**副作用**。
 
 基于 Mobx 的基础练习，todo list & count。
 
+![Mobx Flow](https://github.com/Coyeah/react-primer/blob/master/resource/mobxFlow.png)
+
 ## React 中的 Context - demo11
 
 `Context` 被翻译为上下文。

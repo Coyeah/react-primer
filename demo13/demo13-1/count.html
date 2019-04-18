@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Rx.js</title>
+  <style media="screen">
+    body {
+      font-family: sans-serif;
+      padding: 10px;
+    }
+
+    h2 {
+      font-weight: bold;
+      display: inline-block;
+      margin-left: 20px;
+    }
+
+    .header {
+      background: #ECECEC;
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="alert alert-info">
+      <Button id="plus">+</Button>
+      <Button id="minus">-</Button>
+      Count: <span id="result">0</span>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/3.1.1/rx.all.compat.min.js"></script>
+  <script type="text/javascript">
+    var plusEl = document.querySelector('#plus');
+    var minusEl = document.querySelector('#minus');
+    var counterEl = document.querySelector('#result');
+
+    var plusStream = Rx.Observable.fromEvent(plusEl, 'click');
+    var minusStream = Rx.Observable.fromEvent(minusEl, 'click');
+
+    var plus = plusStream.map(1);
+    var minus = minusStream.map(-1);
+    var source = plus.merge(minus);
+
+    source
+      .scan(function(acc, v) {
+        return acc + v;
+      }, 0)
+      .subscribe(function(v) {
+        counterEl.innerHTML = v;
+      });
+  </script>
+</body>
+
+</html>

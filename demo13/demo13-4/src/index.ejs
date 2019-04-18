@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Rx.js</title>
+</head>
+
+<body>
+  <div># 过滤掉小于3个字符长度的目标值</div>
+  <input id="input1" /><span id="value1"></span>
+  <br />
+  <div># 延迟事件</div>
+  <input id="input2" /><span id="value2"></span>
+  <br />
+  <div># 每1000ms只能通过一个事件</div>
+  <input id="input3" /><span id="value3"></span>
+  <br />
+  <div># 停止输入后200ms方能通过最新的那个事件</div>
+  <input id="input4" /><span id="value4"></span>
+  <br />
+  <div># 在3次事件后停止事件流</div>
+  <input id="input5" /><span id="value5"></span>
+  <br />
+  <div># 直到其他 observable 触发事件才停止事件流</div>
+  <input id="input6" /><span id="value6"></span>
+  <br />
+  <button>Stop Observable</button>
+</body>
+
+</html>

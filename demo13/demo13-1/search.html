@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://unpkg.com/@reactivex/rxjs@5.0.3/dist/global/Rx.js"></script>
+  </head>
+  <body>
+    <input /><button>Click</button>
+    <script type="text/javascript">
+    var input = Rx.Observable.fromEvent(document.querySelector('input'), 'input');
+
+    // 过滤掉小于3个字符长度的目标值
+    input.filter(event => event.target.value.length > 2)
+      .map(event => event.target.value)
+      .subscribe(value => console.log(value)); // "hel"
+
+    // 延迟事件
+    input.delay(1000)
+      .map(event => event.target.value)
+      .subscribe(value => console.log(value)); // "h" -200ms-> "e" -200ms-> "l" ...
+
+    // 每200ms只能通过一个事件
+    input.throttleTime(200)
+      .map(event => event.target.value)
+      .subscribe(value => console.log(value)); // "h" -200ms-> "w"
+
+    // 停止输入后200ms方能通过最新的那个事件
+    input.debounceTime(200)
+      .map(event => event.target.value)
+      .subscribe(value => console.log(value)); // "o" -200ms-> "d"
+
+    // 在3次事件后停止事件流
+    input.take(3)
+      .map(event => event.target.value)
+      .subscribe(value => console.log(value)); // "hel"
+
+    // 直到其他 observable 触发事件才停止事件流
+    var stopStream = Rx.Observable.fromEvent(document.querySelector('button'), 'click');
+    input.takeUntil(stopStream)
+      .map(event => event.target.value)
+      .subscribe(value => console.log(value)); // "hello" (点击才能看到)
+    </script>
+  </body>
+</html>

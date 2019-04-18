@@ -5,7 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
-    vendor: ['react', 'react-dom'],
+    vendor: ['rxjs'],
     bundle: __dirname + '/src/index.js'
   },
   output: {
