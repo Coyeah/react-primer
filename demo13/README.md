@@ -11,3 +11,7 @@ ES6 下的对 Rx.js 的使用。
 ## demo13-5
 
 react + rxjs + redux + redux-observable
+
+## demo13-6
+
+react + rxjs + redux + redux-observable 分文件开发DEMO
