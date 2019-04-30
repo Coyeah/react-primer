@@ -1,6 +1,11 @@
 import React, {createContext, useContext, useReducer} from 'react';
 
 let Store = null;
+let Provider = props => (
+  <div>
+    {props.children}
+  </div>
+);
 
 const createStore = (reducer, initialState) => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -8,13 +13,11 @@ const createStore = (reducer, initialState) => {
     store: state,
     dispatch,
   });
+  Provider = Store.Provider;
   return {
-    store: {
-      store: state,
-      dispatch,
-    },
-    Provider: Store.Provider,
-  }
+    store: state,
+    dispatch,
+  };
 }
 
 const connect = (WrappedComponent) => {
@@ -27,6 +30,8 @@ const connect = (WrappedComponent) => {
     )
   }
 }
+
+export default Provider;
 
 export {
   createStore,
