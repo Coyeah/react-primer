@@ -1,4 +1,4 @@
-import React, {useState, useLayoutEffect} from 'react';
+import React, {useState, useEffect, useLayoutEffect} from 'react';
 
 function getSize(el) {
   if (!el) return {};
@@ -17,15 +17,18 @@ const useComponentSize = ref => {
     }
   }
 
-  useLayoutEffect(() => {
+  // useLayoutEffect(() => {
+  useEffect(() => {
     handleReszie();
 
     let resizeObserver = new ResizeObserver(() => handleReszie());
     resizeObserver.observe(ref.current);
+    console.log('useEffect: componetDidMount / componentDidUpdate');
 
     return () => {
       resizeObserver.disconnect(ref.current);
       resizeObserver = null;
+      console.log('useEffect: componentWillUnmount');
     }
   }, []);
 

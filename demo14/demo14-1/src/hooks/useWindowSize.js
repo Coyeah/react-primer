@@ -18,10 +18,10 @@ const useWindowSize = () => {
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
-    console.log('useEffect: componetDidMount / componentDidUpdate');
+    // console.log('useEffect: componetDidMount / componentDidUpdate');
     return () => {
       window.removeEventListener('resize', handleResize);
-      console.log('useEffect: componentWillUnmount');
+      // console.log('useEffect: componentWillUnmount');
     }
   }, []);
 
