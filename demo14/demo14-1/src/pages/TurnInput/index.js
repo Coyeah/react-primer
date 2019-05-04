@@ -4,7 +4,7 @@ import FancyInput from './FancyInput';
 const TurnInput = (props) => {
   const inputRef = useRef(null);
   const onInputFocus = () => {
-    inputRef.current.focus();
+    inputRef.current.inputFocus();
   }
   return (
     <>
