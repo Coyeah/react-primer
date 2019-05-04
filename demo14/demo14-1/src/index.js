@@ -6,6 +6,7 @@ import {reducer, initialState} from './pages/Counter/reducer';
 import PageSize from './pages/PageSize/';
 import Counter from './pages/Counter/';
 import ListenSize from './pages/ListenSize';
+import TurnInput from './pages/TurnInput';
 
 const routeMap = [
   {
@@ -17,6 +18,9 @@ const routeMap = [
   }, {
     name: '监听窗口大小',
     component: () => <PageSize />,
+  }, {
+    name: 'Input 穿透 ref',
+    component: () => <TurnInput />
   }
 ];
 

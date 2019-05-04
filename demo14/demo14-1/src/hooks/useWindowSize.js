@@ -17,11 +17,13 @@ const useWindowSize = () => {
   }
 
   useEffect(() => {
-    window.addEventListener('resize', handleResize);
+    // 对应 class component 中的 componentDidMount 与 componentDidUpdate 的生命周期
     // console.log('useEffect: componetDidMount / componentDidUpdate');
+    window.addEventListener('resize', handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize);
+      // 对应 class component 中的 componentWillUnmount 的生命周期
       // console.log('useEffect: componentWillUnmount');
+      window.removeEventListener('resize', handleResize);
     }
   }, []);
 

@@ -16,9 +16,10 @@ const useComponentSize = ref => {
       setComponentSize(getSize(ref.current));
     }
   }
-
-  // useLayoutEffect(() => {
-  useEffect(() => {
+  // useLayoutEffect 与 useEffect 区别在于：执行时机不同
+  // useLayoutEffect 在浏览器读取 DOM 时就开始运行，并在完成渲染的同时一并结束，最终渲染页面是完成副作用后的结果。
+  // useEffect 是在完成页面渲染后再触发副作用的函数方法，并可能再次触发别的操作。
+  useLayoutEffect(() => {
     handleReszie();
 
     let resizeObserver = new ResizeObserver(() => handleReszie());
