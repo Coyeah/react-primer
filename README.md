@@ -133,3 +133,5 @@ redux中间件，涉及JavaScript生成器。关键词：**副作用**。
 + 组件树层级变浅，在原本的代码中，我们经常使用 HOC/render props 等方式来复用组件的状态，增强功能等，无疑增加了组件树层数及渲染，而在 React Hooks 中，这些功能都可以通过强大的自定义的 Hooks 来实现。
 
 ## dnd拖拽 - demo15
+
+react-dnd 是 react 的一个拖拽插件，在升级为 hooks 功能后也配置了一系列拖拽功能的自定义 hooks。

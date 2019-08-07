@@ -26,13 +26,13 @@ const CardItem = (props) => {
       canDrop: !!monitor.canDrop(),
     }),
   })
-  // console.log('isOver: ', isOver);
-  // console.log('canDrop: ', canDrop);
+  // console.log(props.title, 'isOver: ', isOver);
+  // console.log(props.title, 'canDrop: ', canDrop);
 
   return (
     <div ref={drop}>
       <div ref={drag}>
-        <Card title={props.title} style={{ opacity: isDragging ? 0.2 : 1, width: 300 }}>
+        <Card title={props.title} style={{ opacity: isDragging ? 0.2 : 1, width: 300, boxShadow: isOver ? '0px 0px 5px gray' : '' }}>
           <p>{props.content}</p>
         </Card>
       </div>
