@@ -16,14 +16,10 @@ const defaultList = [{ //定义卡片内容
   content:"this is Third Card"
 }];
 
-const Partition = (props) => (
-  <div style={{ width: 20, height: '100%', margin: '0 10px'}} />
-)
-
 const CardList = (props) => {
-  const [TargetComponent, data] = useDnd(defaultList, CardItem, Partition);
+  const [TargetComponent, data] = useDnd(defaultList, CardItem, true);
   return (
-    <TargetComponent className='card' />
+    <TargetComponent className="card" />
   )
 }
 

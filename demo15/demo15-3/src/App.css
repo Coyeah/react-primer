@@ -1,6 +1,9 @@
 @import '~antd/dist/antd.css';
 
+* {
+  box-sizing: border-box;
+}
+
 .card{
-  display: flex;
   margin: 50px;
 }
