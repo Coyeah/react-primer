@@ -22,11 +22,7 @@ const useDnd = (initData = [], Wrapper, isOrder = false) => {
     if (dragTarget == dropTarget) return;
     let tempData = [...data];
     if (!!isOrder) {
-      if (dragTarget > dropTarget) {    // 从后往前移动
-        tempData.splice(dropTarget, 0, tempData.splice(dragTarget, 1).pop());
-      } else {                          // 从前往后移动
-        tempData.splice(dropTarget, 0, tempData.splice(dragTarget, 1).pop());
-      }
+      tempData.splice(dropTarget, 0, tempData.splice(dragTarget, 1).pop());
     } else {
       let temp = tempData[dragTarget];
       tempData[dragTarget] = tempData[dropTarget];
