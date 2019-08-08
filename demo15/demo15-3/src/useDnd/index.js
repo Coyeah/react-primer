@@ -1,13 +1,18 @@
 import React, { useState, useCallback } from 'react';
-import { DndProvider, useDrag, useDrop } from 'react-dnd';
+import { DndProvider } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import Drag from './Drag';
 import Drop from './Drop';
 import Effect from './Effect';
 
-export const ACCEPTTYPE = Symbol('useDnd-item-type');
-
+/**
+ * 
+ * @param {Array} initData 初始化数据源
+ * @param {ReactComponent} Wrapper React 组件，用于封装每个 Item
+ * @param {boolean} isOrder 拖拽是插入，亦或直接替换
+ */
 const useDnd = (initData = [], Wrapper, isOrder = false) => {
+  const [type] = useState(Symbol('useDnd-item-type'));
   if (!Array.isArray(initData)) {
     console.warn('useDnd: The initialization data must be an array.')
     initData = [initData];
@@ -33,7 +38,7 @@ const useDnd = (initData = [], Wrapper, isOrder = false) => {
   const childrenRender = useCallback((data) => {
     return data.map((value, index) => {
       return (
-        <Drag index={index} key={index}>
+        <Drag index={index} key={index} type={type}>
           <Drop onDnd={onDnd}>
             <Effect isOrder={isOrder}>
               <Wrapper {...value} />

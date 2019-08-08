@@ -134,4 +134,6 @@ redux中间件，涉及JavaScript生成器。关键词：**副作用**。
 
 ## dnd拖拽 - demo15
 
-react-dnd 是 react 的一个拖拽插件，在升级为 hooks 功能后也配置了一系列拖拽功能的自定义 hooks。
+react-dnd 是 react 的一个拖拽插件，在 react 升级了 hooks 功能后也配置了一系列拖拽功能的自定义 hooks。[官网地址](https://github.com/react-dnd/react-dnd/)
+
+详细内容可以来访我的blog文章 - [react-dnd 小结](https://www.coyeah.top/#/post/40)

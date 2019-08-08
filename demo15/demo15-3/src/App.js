@@ -1,9 +1,13 @@
 import React from 'react';
 import CardList from './components/CardList';
+import CardListO from './components/CardListO';
 import './App.css';
 function App() {
   return (
-    <CardList />
+    <div style={{display: 'flex', padding: 30}}>
+      <CardList />
+      <CardListO />
+    </div>
   );
 }
 

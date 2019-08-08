@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { useDrop } from 'react-dnd';
-import { ACCEPTTYPE } from '.';
 
 const Drop = props => {
-  const { index, drag = {}, onDnd, onHover, children, ...restProps } = props;
-  const isMe = useState(false);
+  const { index, type, drag = {}, onDnd, onHover, children, ...restProps } = props;
   const [{ isOver, canDrop, dropTarget }, drop] = useDrop({
-    accept: ACCEPTTYPE,
+    accept: type,
     drop: (item, monitor) => {
       onDnd && onDnd(item.index, index);
     },
@@ -19,7 +17,7 @@ const Drop = props => {
   return (
     <div ref={drop} {...restProps}>
       {React.Children.map(children, child => React.cloneElement(child, {
-        drag, drop: { isOver, canDrop, dropTarget }, index
+        drag, drop: { isOver, canDrop, dropTarget }, index, type
       }))}
     </div>
   )

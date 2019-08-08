@@ -16,14 +16,14 @@ const defaultList = [{ //定义卡片内容
   content:"this is Third Card"
 }];
 
-const CardList = (props) => {
-  const [TargetComponent, data] = useDnd(defaultList, CardItem, false);
+const CardListO = (props) => {
+  const [TargetComponent, data] = useDnd(defaultList, CardItem, true);
   return (
     <>
-      <h3>拖拽方式：替换</h3>
+      <h3>拖拽方式：插入</h3>
       <TargetComponent className="card" />
     </>
   )
 }
 
-export default CardList;
+export default CardListO;
