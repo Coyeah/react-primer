@@ -15,3 +15,9 @@ react + rxjs + redux + redux-observable
 ## demo13-6
 
 react + rxjs + redux + redux-observable 分文件开发DEMO
+
+## demo13-7
+
+RxJS 6 + Recompose 在 React 中构建 Github 搜索功能
+
+[参考博文](https://www.freecodecamp.org/news/how-to-build-a-github-search-in-react-with-rxjs-6-and-recompose-e9c6cc727e7f/)
