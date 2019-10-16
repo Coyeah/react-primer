@@ -25,7 +25,11 @@ const defaultList = [{ //定义卡片内容
 }];
 
 const CardListO = (props) => {
-  const [TargetComponent, data] = useDnd(defaultList, CardItem, true);
+  const [TargetComponent, data] = useDnd({
+    Component: CardItem,
+    isOrder: true,
+    initData: defaultList
+  });
   return (
     <>
       <h3>拖拽方式：插入</h3>
