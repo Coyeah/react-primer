@@ -85,7 +85,7 @@
     "mobx": "^5.9.4",
     "mobx-react": "^5.4.3",
     "mobx-react-lite": "^1.2.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "prop-types": "^15.7.2",
     "qs": "^6.6.0",
     "react": "^16.8.6",
